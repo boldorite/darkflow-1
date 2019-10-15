@@ -91,9 +91,9 @@ class TFNet(object):
 		self.framework = create_framework(self.meta, self.FLAGS)
 
 		# Placeholders
-		self.inp = tf.get_default_graph().get_tensor_by_name('input:0')
-		self.feed = dict() # other placeholders
-		self.out = tf.get_default_graph().get_tensor_by_name('output:0')
+		self.inp = tf.compat.v1.get_default_graph().get_tensor_by_name('input:0')
+		self.feed = dict() # tf.compat.v1.get_default_graph  tf.get_default_graph()  other placeholders
+		self.out = tf.compat.v1.get_default_graph().get_tensor_by_name('output:0')
 		
 		self.setup_meta_ops()
 	
