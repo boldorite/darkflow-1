@@ -102,7 +102,7 @@ class TFNet(object):
 
 		# Placeholders
 		inp_size = [None] + self.meta['inp_size']
-		self.inp = tf.placeholder(tf.float32, inp_size, 'input')
+		self.inp = tf.compat.v1.placeholder(tf.float32, inp_size, 'input')
 		self.feed = dict() # other placeholders
 
 		# Build the forward pass
