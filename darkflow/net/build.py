@@ -174,4 +174,4 @@ class TFNet(object):
 			json.dump(self.meta, fp)
 		self.say('Saving const graph def to {}'.format(name))
 		graph_def = tfnet_pb.sess.graph_def
-		tf.train.write_graph(graph_def,'./', name, False)
+		tf.io.write_graph(graph_def,'./', name, False)
